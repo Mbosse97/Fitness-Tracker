@@ -1,0 +1,40 @@
+{
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "description": "fitness app to track sleep, diet and excercise",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lhoole/Fitness-Tracker.git"
+  },
+  "author": "lhoole, adzy89, andynewen, mbosse97",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lhoole/Fitness-Tracker/issues"
+  },
+  "homepage": "https://github.com/Lhoole/Fitness-Tracker#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "chart.js": "^4.2.1",
+    "connect-session-sequelize": "^7.0.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.7",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.29.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "nodemon": "^2.0.21",
+    "prettier": "^2.1.2"
+  }
+}

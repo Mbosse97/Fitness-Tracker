@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-auto">
+      <h2>Meals</h2>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h3>Add a New Meal:</h3>
+      
+      <form class="form new-meal-form">
+        <div class="form-group">
+          <label for="meal-name">Meal Name:</label>
+          <input class="form-control" type="text" id="meal-name" name="meal-name"/>
+        </div>
+
+    <div>
+        <input
+        type="checkbox"
+        id="meal-junk"
+        id="meal-junk-checkbox"
+        name="checkbox"
+        value= "false" />
+      <label for="meal-junk">Junk Meal</label>
+    </div>
+  
+        <div class="form-group">
+        <label for="meal-start">Meal Time:</label>
+          <input
+            id="meal-start"
+            type="datetime-local"
+            name="meal-start"/>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary new-meal-form">Add Meal</button>
+        </div>
+
+      {{#if meals.length}}
+    <div class="col-md-6 meal-list">
+      <h3>Past meals:</h3>
+
+      {{#each meals as |meal|}}
+      <div class="row mb-2">
+        {{#if meal.meal_junk}}
+        <div class="col-md-8">
+          <h4 style="color:red;">{{meal.meal_name}}: Junk Food</h4>
+          <p>{{format_date meal.date_time_start}}</p>
+        </div>
+        {{else}}
+        <div class="col-md-8">
+          <h4 style="color:green;">{{meal.meal_name}}: Healthy</h4>
+          <p>{{format_date meal.date_time_start}}</p>
+        </div>
+        {{/if}}
+        <div class="col-md-4">
+          <button type="click" class="btn btn-sm btn-danger" data-id="{{meal.id}}">DELETE</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+</div>
+</div>
+<script src="./js/meals.js"></script>
